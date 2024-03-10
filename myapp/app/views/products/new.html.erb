@@ -1,0 +1,19 @@
+<h1>Nieuw product</h1>
+
+<%= form_with model: @product do |form| %>
+  <div>
+    <%= form.label :naam %><br />
+    <%= form.text_field :naam %>
+  </div>
+  <div>
+    <%= form.label :info %><br />
+    <%= form.text_field :info %>
+  </div>
+  <div>
+    <%= form.label :prijs %><br />
+    <%= form.number_field :prijs, step: 0.01 %>
+  </div>
+  <div>
+    <%= form.submit "Product aanmaken"%>
+  </div>
+<% end %>

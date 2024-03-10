@@ -1,0 +1,26 @@
+<h1>Producten</h1>
+
+<table>
+  <tr>
+    <th>Naam</th>
+    <th>Info</th>
+    <th>Prijs</th>
+    <th>Gemaakt op</th>
+  </tr>
+  <% @products.each do |product| %>
+    <tr>
+      <td><%= link_to product.naam, product %></td>
+      <td><%= product.info %></td>
+      <td><%= product.prijs %></td>
+      <td><%= product.created_at %></td>
+    </tr>
+  <% end %>
+  <tr></tr>
+  <tr>
+    <th>Totaal:</th>
+    <th><%= number_with_precision @products.sum(:prijs), :precision => 2 %></th>
+    <th></th>
+    <th></th>
+  </tr>
+</table>
+<button><%= link_to "Nieuw product toevoegen", new_product_path %></button>

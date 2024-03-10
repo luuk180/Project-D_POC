@@ -1,0 +1,9 @@
+<h1><%= @product.naam %></h1>
+<ul>
+  <li><%= @product.info %></li>
+  <li><%= @product.prijs %></li>
+  <li><%= link_to "Verwijderen", product_path(@product), data: {
+    turbo_method: :delete,
+    turbo_confirm: "Weet je het zeker?"
+  } %></li>
+</ul>
